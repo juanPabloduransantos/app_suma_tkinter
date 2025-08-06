@@ -5,26 +5,25 @@ from tkinter import *
 # funciones de la app
 # -----------------------------
 
-
 # -----------------------------
 # Ventana principal de la app
 # -----------------------------
 
 # Se declara una variable llamada ventana_principal, que adquiere las caracteristicas de un objeto de tipo Tk()
 
-ventana_pricipal = Tk()
+ventana_principal = Tk()
 
 # Titulo de la ventana
-ventana_pricipal.title("Juan Pablo Duran Santos")
+ventana_principal.title("Juan Pablo Duran Santos")
 
 # Tamaño de la ventana
-ventana_pricipal.geometry("800x500")
+ventana_principal.geometry("800x500")
 
 # deshabilitar boton maximizar de la ventana
-ventana_pricipal.resizable(0,0)
+ventana_principal.resizable(0,0)
 
 #color de fondo de la ventana
-ventana_pricipal.config(bg="black")
+ventana_principal.config(bg="black")
 
 # ------------------------
 # Variables globales
@@ -37,7 +36,7 @@ c = IntVar()
 # Frame 1
 # ------------------
 
-frame_1 = Frame(ventana_pricipal)
+frame_1 = Frame(ventana_principal)
 frame_1.config(bg="ivory2", width=780, height=240)
 frame_1.place(x=10,y=10)
 
@@ -86,17 +85,39 @@ titulo.place(x=390,y=10)
 # Frame 2 - operaciones
 # ------------------
 
-frame_2 = Frame(ventana_pricipal)
+frame_2 = Frame(ventana_principal)
 frame_2.config(bg="ivory2", width=780, height=120)
 frame_2.place(x=10,y=260)
+
+#boton de sumar
+img_bt_sumar = PhotoImage(file="img/boton_sumar.png")
+bt_sumar = Button(frame_2, image = img_bt_sumar, width=105, height=105)
+# bt_sumar = Button(frame_2, text="Sumar", width=10)
+bt_sumar.place(x=116, y=7)
+
+# boton para borrar entrada y resultados
+img_bt_borrar = PhotoImage(file="img/boton_borrar.png")
+bt_borrar = Button(frame_2, image = img_bt_borrar, width=105, height=105)
+# bt_sumar = Button(frame_2, text="Sumar", width=10)
+bt_borrar.place(x=337, y=7)
+
+# boton para cerrar la app
+img_bt_salir = PhotoImage(file="img/boton_salir.png")
+bt_salir = Button(frame_2, image = img_bt_salir, width=105, height=105)
+# bt_sumar = Button(frame_2, text="Sumar", width=10)
+bt_salir.place(x=558, y=7)
 
 # ------------------
 # Frame 3 - resultados
 # ------------------
 
-frame_3 = Frame(ventana_pricipal)
+frame_3 = Frame(ventana_principal)
 frame_3.config(bg="ivory2", width=780, height=100)
 frame_3.place(x=10,y=390)
 
+# Area de texto
+t_resultados = Text(frame_3, width=50, height=100)
+t_resultados.config(bg="green", fg="white", font=("Courier",20))
+t_resultados.pack()
 # Metodo principal que despliega la ventana en pantalla
-ventana_pricipal.mainloop()
+ventana_principal.mainloop()
